@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-progress-bar .mat-progress-bar-buffer {
+    background: rgb(184, 184, 184);
+}
+  
+mat-progress-bar .mat-progress-bar-fill::after {
+    background: #8fbd11;
+}
+  
+  /* ✅ שינוי צבע רקע של רשימת ההשלמה האוטומטית */
+  .dark-mode .mat-autocomplete-panel {
+    background: #222 !important;
+    color: white !important;
+    border: 1px solid #555 !important;
+  }
+  
+  /* ✅ שינוי צבע הטקסט של האפשרויות */
+  .dark-mode .mat-option {
+    color: white !important;
+    background: #333 !important;
+  }
+  
+  /* ✅ שינוי רקע בעת ריחוף על אופציה */
+  .dark-mode .mat-option:hover {
+    background: #444 !important;
+  }
+  
+  /* ✅ תיקון צבעים של שדה החיפוש */
+  .dark-mode mat-form-field {
+    background: transparent !important;
+  }
+  
+  .dark-mode input {
+    background: #333 !important;
+    color: white !important;
+    border-color: #555 !important;
+  }
+
+  .dark-mode .mat-mdc-text-field-wrapper {
+    background: #333 !important;
+  }
+
+  .dark-mode .mdc-text-field--filled .mdc-floating-label {
+    color: white !important;
+  }
+  
+  /* ✅ תיקון צבע הקו התחתון של `mat-form-field` */
+  .dark-mode .mat-form-field-underline {
+    background-color: white !important;
+  }
+  
+
+.dark-mode {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+  }
+  
+  /* התאמת רכיבים מסוימים */
+  .dark-mode .mat-form-field {
+    background: #333 !important;
+    color: white !important;
+  }
+  
+  .dark-mode button {
+    background: inherit !important;
+    color: white !important;
+  }
+  
+//   /* עיצוב כפתור מצב כהה */
+//   #dark-mode-toggle {
+//     margin-top: 10px;
+//   }
+
+  @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode mat-sidenav-container {
+  background-color: #121212;
+}
+
+body.dark-mode mat-card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode mat-toolbar {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode mat-autocomplete {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+body.dark-mode #app-wrapper #content-wrapper{
+  background-color: #333333 !important;
+}

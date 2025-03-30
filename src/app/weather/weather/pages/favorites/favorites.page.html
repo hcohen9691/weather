@@ -1,0 +1,35 @@
+<div class="flex flex-col items-center p-6">
+  <button 
+    class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl"
+    mat-raised-button 
+    (click)="goToSearch()"
+  >
+    ⬅ Back to Search
+  </button>
+
+  <h2 class="text-2xl font-bold text-gray-800 pt-[12px]">🌍 Favorite Cities</h2>
+
+  <ul 
+    *ngIf="favoriteLocations.length > 0; else noFavorites" 
+    class="mt-4 w-full max-w-lg bg-white shadow-lg rounded-lg p-4"
+  >
+    <li 
+      *ngFor="let city of favoriteLocations" 
+      class="flex justify-between items-center border-b last:border-none py-3"
+      @fadeInOut
+    >
+      <h3 class="text-lg font-semibold text-gray-700">{{ city.LocalizedName }}</h3>
+      
+      <button 
+        class="bg-red-500 hover:bg-red-600 text-white dark:text-red-500 py-1 px-3 rounded-lg shadow-sm transition-all duration-300"
+        (click)="removeFavorite(city.Key)"
+      >
+        Remove
+      </button>
+    </li>
+  </ul>
+
+  <ng-template #noFavorites>
+    <p class="text-gray-600 pt-[24px] text-lg">❌ No favorite cities yet.</p>
+  </ng-template>
+</div>

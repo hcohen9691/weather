@@ -1,0 +1,31 @@
+<div id="app-wrapper">
+  <div id="loader"><mat-progress-bar *ngIf="displayLoading" mode="indeterminate"></mat-progress-bar></div>
+
+  <div id="sidenav-container">
+    <h1 class="underline color-[#fff]">WeatherMe</h1>
+
+    <div class="link-wrapper">
+      <mat-icon svgIcon="SEARCH"></mat-icon>
+      <p routerLink="/search">Search</p>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <mat-slide-toggle [disabled]="checkIfFavoritesPage()" id="slide-toggle" (click)="changeTemperatureUnit()">
+        <label>
+          Temperature in {{ weatherService.isMetric ? 'Celsius' : 'Fahrenheit' }}
+        </label>
+      </mat-slide-toggle>
+
+      <mat-slide-toggle id="dark-mode-toggle" (click)="toggleDarkMode()">
+        <label>
+          {{ isDarkMode ? '🌙 Dark Mode' : '🌞 Light Mode' }}
+        </label>
+      </mat-slide-toggle>
+    </div>
+
+  </div>
+
+  <div id="content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</div>
